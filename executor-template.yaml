@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+spec:
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+  containers:
+    - name: spark-kubernetes-executor
+      securityContext:
+        runAsUser: 0
+      volumeMounts:
+        - name: benchmark-data
+          mountPath: /home/ursal/benchmark_results
+  volumes:
+    - name: benchmark-data
+      hostPath:
+        path: /home/ursal/benchmark_results
+        type: DirectoryOrCreate
