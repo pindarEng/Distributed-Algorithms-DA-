@@ -8,5 +8,5 @@ helm install monitoring prometheus-community/kube-prometheus-stack \
   --set prometheus.service.type=NodePort \
   --set prometheus.service.nodePort=30090 \
   --set alertmanager.enabled=false
-echo "Grafana: http://localhost:30080 (admin/prom-operator)"
+echo "Grafana: http://localhost:30080"
 echo "Prometheus: http://localhost:30090"
